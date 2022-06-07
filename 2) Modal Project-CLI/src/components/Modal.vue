@@ -1,12 +1,22 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-      <p>modal content</p>
+    <div class="modal" :class="{ sale: theme === 'sale' }">
+      <!-- the header value below is a prop passed down to this component from a parent component... -->
+      <h3>{{ header }}</h3> 
+      <p>{{ text }}</p>
     </div>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  props: ["header", "text", "theme"],
+  data() {},
+};
+</script>
+
+
+<style scoped>
 .modal {
   width: 400px;
   padding: 20px;
@@ -21,5 +31,14 @@
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
+}
+
+.modal.sale {
+  background: purple;
+  color: white
+}
+
+.modal.sale h1 {
+  color: white
 }
 </style>

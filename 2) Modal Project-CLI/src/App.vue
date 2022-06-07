@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <Modal />
+  <Modal :header="header" :text="text" theme="sale" />
 </template>
 
 <script>
@@ -11,6 +11,12 @@ export default {
   components: {
     Modal,
   },
+  data() {
+    return {
+      header: "example of a prop being passed from App.vue to this Modal.vue component...",
+      text: "modal content"
+    }
+  }
 };
 </script>
 
