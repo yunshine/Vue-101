@@ -1,6 +1,12 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Modal :header="header" :text="text" theme="sale" />
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <div v-if="showModal">
+      <Modal :header="header" :text="text" theme="sale" />
+    </div>
+    <br>
+    <button @click="toggleModal">open modal</button>
+  </div>
 </template>
 
 <script>
@@ -14,7 +20,13 @@ export default {
   data() {
     return {
       header: "example of a prop being passed from App.vue to this Modal.vue component...",
-      text: "modal content"
+      text: "modal content",
+      showModal: false
+    }
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal
     }
   }
 };
