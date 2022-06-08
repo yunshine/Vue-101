@@ -2,7 +2,7 @@
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
     <div v-if="showModal">
-      <Modal :header="header" :text="text" theme="sale" />
+      <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
     </div>
     <br>
     <button @click="toggleModal">open modal</button>

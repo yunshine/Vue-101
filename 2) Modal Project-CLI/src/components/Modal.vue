@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <!-- the header value below is a prop passed down to this component from a parent component... -->
       <h3>{{ header }}</h3> 
@@ -12,6 +12,11 @@
 export default {
   props: ["header", "text", "theme"],
   data() {},
+  methods: {
+    closeModal() {
+      this.$emit('close')
+    }
+  }
 };
 </script>
 
