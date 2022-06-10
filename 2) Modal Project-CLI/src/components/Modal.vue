@@ -1,5 +1,7 @@
 <template>
-  <div class="backdrop" @click="closeModal">
+<!-- the .self on @click.self means that you have to click on the backdrop to close the modal... -->
+<!-- unlike before the .self, clicking on the modal will no longer close the modal, even though it's a part of the backdrop... -->
+  <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{ sale: theme === 'sale' }">
       <!-- the header value below is a prop passed down to this component from a parent component... -->
       <h3>{{ header }}</h3> 
