@@ -2,7 +2,23 @@
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
     <div v-if="showModal">
-      <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+      <!-- <Modal :header="header" :text="text" theme="sale" @close="toggleModal" /> -->
+      <Modal theme="sale" @close="toggleModal">
+
+        <!-- the template below is for named slots named 'links' -->
+        <template v-slot:links>
+          <a href="#">sign up</a>
+          <br>
+          <a href="#">more info</a>
+        </template>
+
+
+        <h3>Some slot info...</h3>
+        <h4>Some more slot info...</h4>
+        <div class=actions>
+          
+        </div>
+      </Modal>
     </div>
     <br>
     <button @click.shift="toggleModal">open modal (hold shift)</button>
