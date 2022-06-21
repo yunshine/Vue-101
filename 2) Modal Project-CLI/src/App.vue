@@ -20,8 +20,27 @@
         </div>
       </Modal>
     </div>
+
+    <div v-if="showModalTwo">
+      <Modal @close="toggleModalTwo">
+
+        <!-- the template below is for named slots named 'links' -->
+        <!-- <template v-slot:links>
+          <a href="#">sign up</a>
+          <br>
+          <a href="#">more info</a>
+        </template> -->
+
+        <h3>Some slot info from ModalTwo... sign up for the newsletter!</h3>
+        <h4>Some more slot info from ModalTwo...</h4>
+        <div class=actions>
+          
+        </div>
+      </Modal>
+    </div>
     <br>
     <button @click.shift="toggleModal">open modal (hold shift)</button>
+    <button @click.alt="toggleModalTwo">open modal (hold alt)</button>s
   </div>
 </template>
 
@@ -37,12 +56,16 @@ export default {
     return {
       header: "example of a prop being passed from App.vue to this Modal.vue component...",
       text: "modal content",
-      showModal: false
+      showModal: false,
+      showModalTwo: false,
     }
   },
   methods: {
     toggleModal() {
       this.showModal = !this.showModal
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo
     }
   }
 };
