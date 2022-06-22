@@ -38,9 +38,28 @@
         </div>
       </Modal>
     </div>
+   
+    <teleport to=".modals" v-if="showModalTeleport">
+      <Modal @close="toggleModalTeleport">
+
+        <!-- the template below is for named slots named 'links' -->
+        <!-- <template v-slot:links>
+          <a href="#">sign up</a>
+          <br>
+          <a href="#">more info</a>
+        </template> -->
+
+        <h3>Some slot info from ModalTeleport...</h3>
+        <h4>Some more slot info from ModalTeleport...</h4>
+        <div class=actions>
+          
+        </div>
+      </Modal>
+    </teleport>
     <br>
     <button @click.shift="toggleModal">open modal (hold shift)</button>
     <button @click.alt="toggleModalTwo">open modal (hold alt)</button>s
+    <button @click="toggleModalTeleport">open modal</button>s
   </div>
 </template>
 
@@ -58,6 +77,7 @@ export default {
       text: "modal content",
       showModal: false,
       showModalTwo: false,
+      showModalTeleport: false
     }
   },
   methods: {
@@ -66,13 +86,16 @@ export default {
     },
     toggleModalTwo() {
       this.showModalTwo = !this.showModalTwo
+    },
+    toggleModalTeleport() {
+      this.showModalTeleport = !this.showModalTeleport
     }
   }
 };
 </script>
 
 <style>
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
