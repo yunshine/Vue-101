@@ -1,8 +1,8 @@
 <template>
   <h1>Yun's Reaction Timer Game</h1>
-  <button @click='start'>Play</button>
+  <button @click='start' :disabled='isPlaying'>Play</button>
 
-  <Block />
+  <Block v-if='isPlaying' :delay='delay' />
 </template>
 
 <script>
