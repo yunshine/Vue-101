@@ -1,12 +1,25 @@
 <template>
   <h1>Yun's Reaction Timer Game</h1>
+  <button @click="start">Play</button>
 </template>
 
 <script>
 
 export default {
   name: 'App',
-  components: {}
+  components: {},
+  data() {
+    return {
+      isPlaying: false,
+      delay: null
+    }
+  },
+  methods: {
+    start() {
+      this.isPlaying = true,
+      this.delay = 2000 + (Math.random() * 5000)
+    }
+  }
 }
 </script>
 
