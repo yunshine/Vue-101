@@ -1,13 +1,16 @@
 <template>
   <h1>Yun's Reaction Timer Game</h1>
-  <button @click="start">Play</button>
+  <button @click='start'>Play</button>
+
+  <Block />
 </template>
 
 <script>
+import Block from './components/Block.vue'
 
 export default {
   name: 'App',
-  components: {},
+  components: { Block },
   data() {
     return {
       isPlaying: false,
