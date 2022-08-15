@@ -29,11 +29,12 @@ export default {
   },
   methods: {
     startTimer() {
-      this.timer = setInterval(() => { this.reactionTime += 10 }, 10) // the 10 is 10 milliseconds...
+      this.timer = setInterval(() => { this.reactionTime += 5 }, 5) // the 5 is 5 milliseconds...
     },
     stopTimer() {
       clearInterval(this.timer)
       console.log(`reaction time: ${this.reactionTime}`)
+      this.$emit('endOfGame', this.reactionTime)
     }
   }
 }

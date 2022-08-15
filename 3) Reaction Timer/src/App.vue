@@ -2,7 +2,7 @@
   <h1>Yun's Reaction Timer Game</h1>
   <button @click='start' :disabled='isPlaying'>Play</button>
 
-  <Block v-if='isPlaying' :delay='delay' />
+  <Block v-if='isPlaying' :delay='delay' @endOfGame='endGame' />
 </template>
 
 <script>
@@ -14,13 +14,18 @@ export default {
   data() {
     return {
       isPlaying: false,
-      delay: null
+      delay: null,
+      score: null
     }
   },
   methods: {
     start() {
       this.isPlaying = true,
       this.delay = 2000 + (Math.random() * 5000)
+    },
+    endGame(reactionTime) {
+      this.score = reactionTime
+      this.isPlaying = false
     }
   }
 }
