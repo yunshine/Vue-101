@@ -14,11 +14,24 @@
     </select>
   
     <div class="terms_and_conditions">
-      <input type="checkbox" required>
+      <input type="checkbox" required v-model="terms">
       <label>Accept Terms And Conditions</label>
     </div>
-  </form>
 
+    <div class="names_list_array">
+      <input type="checkbox" value="Yun" v-model="names">
+      <label>Yun</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Eunjoo" v-model="names">
+      <label>Eunjoo</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Noriko" v-model="names">
+      <label>Noriko</label>
+    </div>
+  </form>
+  <p>{{names}}</p>
 </template>
 
 <script>
@@ -27,7 +40,9 @@ export default {
     return {
       email_address: '',
       password: '',
-      role: 'Web Developer'
+      role: 'Web Developer',
+      terms: false,
+      names: []
     }
   }
 
