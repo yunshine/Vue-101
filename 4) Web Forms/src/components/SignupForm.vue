@@ -12,7 +12,13 @@
       <option value="Web Designer">Web Designer</option>
       <option value="Project Manager">Project Manager</option>
     </select>
+  
+    <div class="terms_and_conditions">
+      <input type="checkbox" required>
+      <label>Accept Terms And Conditions</label>
+    </div>
   </form>
+
 </template>
 
 <script>
@@ -54,5 +60,12 @@ export default {
     border: none;
     border-bottom: 1px solid #ddd;
     color: #555;
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    width: 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 1px
   }
 </style>
