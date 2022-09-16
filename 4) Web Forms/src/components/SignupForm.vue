@@ -13,7 +13,7 @@
       <option value="Project Manager">Project Manager</option>
     </select>
 
-    <label>Skills:</label>
+    <label>Skills: (press "alt" + "," after each skill)</label>
     <input type="text" v-model="tempSkill" @keyup="addSkill">
   
     <div class="terms_and_conditions">
@@ -38,6 +38,11 @@
   <p>{{ tempSkill }}</p>
   <p>{{ skills }}</p>
   <p>{{ terms }}</p>
+
+  <div class="pill" v-for="skill in skills" :key="skill">
+    {{ skill }}
+  </div>
+
 </template>
 
 <script>
@@ -56,8 +61,10 @@ export default {
   methods: {
     addSkill(e) {
       if (e.key === ',' && this.tempSkill) {
-        this.skills.push(this.tempSkill)
-        this.tempSkill = ''
+        if (!this.skills.includes(this.tempSkill.slice(0, -1))) {
+          this.skills.push(this.tempSkill.slice(0, -1))
+        }
+      this.tempSkill = ''
       }
     }
   }
