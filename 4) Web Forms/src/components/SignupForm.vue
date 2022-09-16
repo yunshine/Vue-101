@@ -54,7 +54,12 @@ export default {
     }
   },
   methods: {
-    addSkill() {}
+    addSkill(e) {
+      if (e.key === ',' && this.tempSkill) {
+        this.skills.push(this.tempSkill)
+        this.tempSkill = ''
+      }
+    }
   }
 }
 </script>
