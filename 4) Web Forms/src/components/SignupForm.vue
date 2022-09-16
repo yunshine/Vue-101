@@ -12,6 +12,9 @@
       <option value="Web Designer">Web Designer</option>
       <option value="Project Manager">Project Manager</option>
     </select>
+
+    <label>Skills:</label>
+    <input type="text" v-model="tempSkill" @keyup="addSkill">
   
     <div class="terms_and_conditions">
       <input type="checkbox" required v-model="terms">
@@ -31,7 +34,10 @@
       <label>Noriko</label>
     </div>
   </form>
-  <p>{{names}}</p>
+
+  <p>{{ tempSkill }}</p>
+  <p>{{ skills }}</p>
+  <p>{{ terms }}</p>
 </template>
 
 <script>
@@ -42,10 +48,14 @@ export default {
       password: '',
       role: 'Web Developer',
       terms: false,
-      names: []
+      names: [],
+      tempSkill: '',
+      skills: []
     }
+  },
+  methods: {
+    addSkill() {}
   }
-
 }
 </script>
 
