@@ -39,7 +39,7 @@
   <p>{{ skills }}</p>
   <p>{{ terms }}</p>
 
-  <div class="pill" v-for="skill in skills" :key="skill">
+  <div class="skills" v-for="skill in skills" :key="skill">
     {{ skill }}
   </div>
 
@@ -104,5 +104,17 @@ export default {
     margin: 0 10px 0 0;
     position: relative;
     top: 1px
+  }
+  .skills {
+    display: inline-block;
+    margin: 20px 10px 0 0;
+    padding: 6px 12px;
+    background: #eee;
+    border-radius: 20px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #777;
+    cursor: pointer;
   }
 </style>
