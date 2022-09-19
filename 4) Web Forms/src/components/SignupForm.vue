@@ -40,7 +40,7 @@
   <p>{{ terms }}</p>
 
   <div class="skills" v-for="skill in skills" :key="skill">
-    {{ skill }}
+    <span @click="deleteSkill(skill)">{{ skill }}</span>
   </div>
 
 </template>
@@ -66,6 +66,11 @@ export default {
         }
       this.tempSkill = ''
       }
+    },
+    deleteSkill(skill) {
+      this.skills = this.skills.filter((item) => {
+        return skill !== item
+      })
     }
   }
 }
