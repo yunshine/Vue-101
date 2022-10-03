@@ -33,6 +33,10 @@
       <input type="checkbox" value="Noriko" v-model="names">
       <label>Noriko</label>
     </div>
+
+    <div class="submit">
+      <button>Create an Account</button>
+    </div>
   </form>
 
   <p>{{ tempSkill }}</p>
@@ -121,5 +125,16 @@ export default {
     font-weight: bold;
     color: #777;
     cursor: pointer;
+  }
+  button {
+    background: #0b6dff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+  }
+  .submit {
+    text-align: center;
   }
 </style>
