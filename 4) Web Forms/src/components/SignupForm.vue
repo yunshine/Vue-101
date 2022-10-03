@@ -13,7 +13,7 @@
       <option value="Project Manager">Project Manager</option>
     </select>
 
-    <label>Skills: (press "alt" + "," after each skill)</label>
+    <label>Skills: (press "," after each skill)</label>
     <input type="text" v-model="tempSkill" @keyup="addSkill">
   
     <div class="terms_and_conditions">
@@ -67,8 +67,8 @@ export default {
       this.tempSkill = ''
       }
     },
-    deleteSkill(skill) {
-      this.skills = this.skills.filter((item) => {
+    deleteSkill(item) {
+      this.skills = this.skills.filter((skill) => {
         return skill !== item
       })
     }
