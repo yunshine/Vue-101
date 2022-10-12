@@ -29,6 +29,11 @@ const routes = [
     name: 'JobDetails',
     component: JobDetails,
     props: true // how to pass route params as props
+  },
+  // redirect
+  {
+    path: '/all-jobs', // the url that we're redirecting FROM
+    redirect: 'jobs', // the url path or name that we're redirecting To
   }
 ]
 
