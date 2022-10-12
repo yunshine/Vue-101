@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
+import catchAll from '../views/404View.vue'
 import Jobs from '../views/jobs/Jobs.vue'
 import JobDetails from '../views/jobs/JobDetails.vue'
+
 
 const routes = [
   {
@@ -30,10 +32,16 @@ const routes = [
     component: JobDetails,
     props: true // how to pass route params as props
   },
-  // redirect
   {
+    // redirect
     path: '/all-jobs', // the url that we're redirecting FROM
     redirect: 'jobs', // the url path or name that we're redirecting To
+  },
+  {
+    //catch all ==> go to the 404 page
+    path: '/:catchAll(.*)',
+    name: 'notFound',
+    component: catchAll
   }
 ]
 
