@@ -17,8 +17,12 @@
 export default {
   methods: {
     redirect() {},
-    back() {},
-    forward() {}
+    back() {
+      this.$router.go(-1) // $router.go is used to move the user to routes in the browswer history
+    },
+    forward() {
+      this.$router.go(1) // $router.go is used to move the user to routes in the browswer history
+    }
   }
 }
 </script>
