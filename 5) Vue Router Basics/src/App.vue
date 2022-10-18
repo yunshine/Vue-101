@@ -16,7 +16,10 @@
 <script>
 export default {
   methods: {
-    redirect() {},
+    redirect() {
+      this.$router.push('/') // $router.push is used to redirect the user to a route of our choosing
+      // this.$router.push({ name: 'home' }) // alternate syntax
+    },
     back() {
       this.$router.go(-1) // $router.go is used to move the user to routes in the browswer history
     },
